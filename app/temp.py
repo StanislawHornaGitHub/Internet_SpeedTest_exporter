@@ -1,4 +1,4 @@
-from src.Model.SpeedTest import SpeedTest
+from src.Model.SpeedTest.SpeedTest import SpeedTest
 print(
         SpeedTest(**{
             "type": "result",
@@ -54,5 +54,5 @@ print(
                 "url": "https://www.speedtest.net/result/c/95db9c32-330a-49fc-9697-b4f4a5ee8dd1",
                 "persisted": "true"
             }
-        })
+        }).model_dump()
     )

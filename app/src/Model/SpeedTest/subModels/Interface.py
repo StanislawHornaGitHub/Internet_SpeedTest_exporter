@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_serializer
 
 
 class Interface(BaseModel):
@@ -7,3 +7,7 @@ class Interface(BaseModel):
     mac_address: str = Field(alias='macAddr', default="-")
     is_vpn: bool = Field(alias='isVpn', default="-")
     external_ip: str = Field(alias='externalIp', default="-")
+
+    @field_serializer('is_vpn')
+    def serialize_persisted(self, is_vpn: int, _info):
+        return str(is_vpn)

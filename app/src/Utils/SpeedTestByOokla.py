@@ -28,12 +28,12 @@ class SpeedTestByOokla:
 
     @staticmethod
     def run_speedtest() -> SpeedTest:
-        # If any step will fail return SpeedTest object with default values
-        # default values should be 0 or nulls, to be able to see that something is going on,
-        # instead of having outdated data
-        out_raw: bytes = SpeedTestByOokla.__run_ookla_subprocess()
-
-        parsed_json: dict = SpeedTestByOokla.__parse_json_output(out_raw)
+        try:
+            out_raw: bytes = SpeedTestByOokla.__run_ookla_subprocess()
+            parsed_json: dict = SpeedTestByOokla.__parse_json_output(out_raw)
+            
+        except Exception:
+            return SpeedTest()
 
         return SpeedTest(**parsed_json)
 

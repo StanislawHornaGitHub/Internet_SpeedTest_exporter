@@ -1,7 +1,9 @@
 {
     "cSpell.words": [
         "asgi",
+        "fastapi",
         "Ookla",
-        "pydantic"
+        "pydantic",
+        "speedtest"
     ]
 }

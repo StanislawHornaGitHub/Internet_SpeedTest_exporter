@@ -1,13 +1,13 @@
-from pydantic import BaseModel, field_serializer
+from pydantic import BaseModel, Field, field_serializer
 
 class Server(BaseModel):
-    id: int
-    host: str
-    port: int
-    name: str
-    location: str
-    country: str
-    ip: str
+    id: int = Field(default=0)
+    host: str = Field(default="-")
+    port: int = Field(default=0)
+    name: str = Field(default="-")
+    location: str = Field(default="-")
+    country: str = Field(default="-")
+    ip: str = Field(default="-")
     
     @field_serializer('id')
     def serialize_id(self, id: int, _info):

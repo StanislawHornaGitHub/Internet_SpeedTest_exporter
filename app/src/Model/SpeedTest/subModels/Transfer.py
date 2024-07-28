@@ -1,12 +1,12 @@
-from pydantic import BaseModel, field_serializer
+from pydantic import BaseModel, Field, field_serializer
 
 from src.Model.SpeedTest.subModels.Ping import TransferPing
 
 class Transfer(BaseModel):
-    bandwidth: int
-    bytes: int
-    elapsed: int
-    latency: TransferPing
+    bandwidth: int = Field(default=0)
+    bytes: int = Field(default=0)
+    elapsed: int = Field(default=0)
+    latency: TransferPing = Field(default=TransferPing())
     
     @field_serializer('bandwidth')
     def serialize_bandwidth(self, bandwidth: int, _info):

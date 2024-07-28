@@ -10,11 +10,11 @@ from src.Model.SpeedTest.subModels.Result import Result
 class SpeedTest(BaseModel):
     _type: str
     _timestamp: str
-    ping: NoWorkloadPing
-    download: Transfer
-    upload: Transfer
-    packet_loss: float = Field(alias='packetLoss')
-    isp: str
-    interface: Interface
-    server: Server
-    result: Result
+    ping: NoWorkloadPing = Field(default=NoWorkloadPing())
+    download: Transfer = Field(default=Transfer())
+    upload: Transfer = Field(default=Transfer())
+    packet_loss: float = Field(alias='packetLoss', default=0.0)
+    isp: str = Field(default="-")
+    interface: Interface = Field(default=Interface())
+    server: Server = Field(default=Server())
+    result: Result = Field(default=Result())

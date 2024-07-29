@@ -8,8 +8,11 @@ import src.Controller as Controller
 
 metrics_app = make_asgi_app()
 
+refresh_interval_period = 60 * int(os.getenv('SPEED_TEST_INTERVAL_MINUTES',5))
 
-@repeat_every(seconds=60 * os.getenv('SPEED_TEST_INTERVAL_MINUTES',5))
+print("Refresh interval is set to: ", refresh_interval_period," seconds.")
+
+@repeat_every(seconds=refresh_interval_period)
 def perform_speed_test():
     Controller.SpeedTest.perform_speed_test()
     print("test performed")

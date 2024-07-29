@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, field_serializer
+from pydantic import BaseModel, Field, field_serializer, root_validator
 
 from src.Model.SpeedTest.subModels.Ping import TransferPing
 
@@ -10,4 +10,8 @@ class Transfer(BaseModel):
     
     @field_serializer('bandwidth')
     def serialize_bandwidth(self, bandwidth: int, _info):
-        return float((bandwidth / 10**6) * 8)
+        return (bandwidth * 8)
+    
+    def __init__(self, **data):
+        super().__init__(**data)
+        self.bandwidth = self.bandwidth * 8

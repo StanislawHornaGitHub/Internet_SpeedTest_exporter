@@ -5,6 +5,7 @@
         "Ookla",
         "pydantic",
         "speedtest",
+        "Speedtests",
         "uvicorn"
     ]
 }

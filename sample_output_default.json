@@ -1,0 +1,55 @@
+{
+    "type": "result",
+    "timestamp": "2024-07-27T16:56:15Z",
+    "ping": {
+        "jitter": 0.674,
+        "latency": 4.263,
+        "low": 4.098,
+        "high": 5.445
+    },
+    "download": {
+        "bandwidth": 114242260,
+        "bytes": 720443712,
+        "elapsed": 6307,
+        "latency": {
+            "iqm": 15.526,
+            "low": 4.080,
+            "high": 37.234,
+            "jitter": 1.364
+        }
+    },
+    "upload": {
+        "bandwidth": 12450697,
+        "bytes": 170631811,
+        "elapsed": 12318,
+        "latency": {
+            "iqm": 4.036,
+            "low": 3.538,
+            "high": 483.333,
+            "jitter": 16.255
+        }
+    },
+    "packetLoss": 0,
+    "isp": "Play",
+    "interface": {
+        "internalIp": "10.0.10.110",
+        "name": "eth0",
+        "macAddr": "00:15:5D:00:13:04",
+        "isVpn": false,
+        "externalIp": "109.243.144.153"
+    },
+    "server": {
+        "id": 4166,
+        "host": "war-o1.speedtest.orange.pl",
+        "port": 8080,
+        "name": "Orange Polska S.A.",
+        "location": "Warsaw",
+        "country": "Poland",
+        "ip": "195.149.236.58"
+    },
+    "result": {
+        "id": "9a3f3aad-8afa-4d93-b1d8-8da7b4df38ae",
+        "url": "https://www.speedtest.net/result/c/9a3f3aad-8afa-4d93-b1d8-8da7b4df38ae",
+        "persisted": true
+    }
+}

@@ -8,10 +8,10 @@
 # Author:   Stanisław Horna
 # GitHub Repository:  https://github.com/StanislawHornaGitHub/Internet_SpeedTest_exporter
 # Created:  27-Jul-2024
-# Version:  1.0
+# Version:  1.1
 
 # Date            Who                     What
-#
+# 2024-07-29      Staniław Horna          Fix timezone setup
 
 FROM ubuntu:22.04
 
@@ -20,10 +20,10 @@ ENV API_PORT="8000"
 ENV INTERFACE_IP="0.0.0.0"
 ENV TZ="Europe/Warsaw"
 
+RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata
 
-RUN apt update \
-    && apt install -y curl python3-dev pip
+RUN apt install -y curl python3-dev pip
 
 RUN curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash \
     &&  apt install -y speedtest

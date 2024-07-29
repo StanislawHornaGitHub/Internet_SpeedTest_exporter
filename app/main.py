@@ -28,4 +28,4 @@ app.mount("/metrics", metrics_app)
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app, host=os.getenv('INTERFACE_IP'), port=os.getenv('API_PORT'))
+    uvicorn.run(app, host=os.getenv('INTERFACE_IP'), port=int(os.getenv('API_PORT')))

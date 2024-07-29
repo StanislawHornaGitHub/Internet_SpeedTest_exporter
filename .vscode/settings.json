@@ -4,6 +4,7 @@
         "fastapi",
         "Ookla",
         "pydantic",
-        "speedtest"
+        "speedtest",
+        "uvicorn"
     ]
 }

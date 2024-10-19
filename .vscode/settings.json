@@ -1,11 +1,24 @@
 {
     "cSpell.words": [
+        "appmetrics",
         "asgi",
+        "dotenv",
         "fastapi",
+        "instrumentator",
+        "Instrumentor",
+        "Interquartile",
+        "nslookup",
         "Ookla",
+        "opentelemetry",
+        "otel",
+        "otlp",
         "pydantic",
+        "semconv",
         "speedtest",
         "Speedtests",
+        "traceroute",
+        "traceroutes",
+        "tracert",
         "uvicorn"
     ]
 }

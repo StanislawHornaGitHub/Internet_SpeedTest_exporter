@@ -15,7 +15,6 @@
 
 FROM ubuntu:22.04
 
-ENV SPEED_TEST_INTERVAL_MINUTES="60"
 ENV API_PORT="8000"
 ENV INTERFACE_IP="0.0.0.0"
 ENV TZ="Europe/Warsaw"
@@ -26,7 +25,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata
 RUN apt install -y curl python3-dev pip
 
 RUN curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash \
-    &&  apt install -y speedtest
+    &&  apt install -y speedtest iputils-ping traceroute 
+
 
 COPY ./app /app
 

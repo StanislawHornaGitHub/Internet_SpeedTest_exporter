@@ -14,9 +14,9 @@ class SpeedTest:
     @tracer.start_as_current_span("SpeedTest.perform_speed_test")
     def perform_speed_test() -> Model.SpeedTest:
         get_current_span()
-        
+
         test: Model.SpeedTest = Utils.SpeedTestByOokla.run_speedtest()
         SpeedTestMetrics.update_metrics(test)
-        
+
         set_current_span_status()
         return test

@@ -48,7 +48,7 @@ async def app_lifespan(app: FastAPI):
         Connectivity Check interval: {cc_int} seconds""".format(
             svc=Config.SERVICE_NAME,
             st_int=Config.SPEEDTEST_INTERVAL,
-            cc_int=Config.CONNECTIVITY_INTERVAL
+            cc_int=Config.CONNECTIVITY_INTERVAL,
         )
     )
     Controller.SpeedTest.check_components()
@@ -56,6 +56,7 @@ async def app_lifespan(app: FastAPI):
     await perform_ping_and_tracert()
     yield
     logger.info(f"Stopping {Config.SERVICE_NAME}")
+
 
 app = FastAPI(lifespan=app_lifespan)
 app.include_router(Router.SpeedTest)
@@ -65,6 +66,7 @@ app.include_router(Router.ConnectivityCheck)
 opentelemetry_instrument(app)
 prometheus_instrument(app)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port="8000")
